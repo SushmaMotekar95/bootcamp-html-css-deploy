@@ -32,6 +32,12 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  return res.status(200).json({ status: 'UP', timestamp: new Date() });
+});
+
+
 app.post("/sign_up", (req, res) => {
   var name = req.body.name;
   var email = req.body.email;
