@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const PDFDocument = require("pdfkit");
 const Razorpay = require('razorpay');
+const cors = require("cors");
 const app = express();
 const {
   initializeFirebaseApp,
@@ -15,7 +16,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+// app.use(express.static("public"));
 app.use(
   bodyParser.urlencoded({
     extended: true,
