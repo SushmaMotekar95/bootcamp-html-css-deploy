@@ -2,7 +2,7 @@ document.getElementById('rzp-button1').onclick = async function (e) {
   e.preventDefault();
 
   try {
-    const orderResponse = await fetch('/create-order', {
+    const orderResponse = await fetch('https://bootcamp-html-css-deploy.onrender.com/create-order', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ document.getElementById('rzp-button1').onclick = async function (e) {
         // Handle payment success
         $.ajax({
           type: "POST",
-          url: "/payment_success",
+          url: "https://bootcamp-html-css-deploy.onrender.com/payment_success",
           data: {
             name: getQueryParam("name"),
             email: getQueryParam("email"),
